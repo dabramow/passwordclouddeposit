@@ -5,10 +5,12 @@
   <artifactId>maincloud</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
-  <name>embeddedTomcatSample Maven Webapp</name>
+  <name>SamDan Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <properties>
-    <tomcat.version>8.0.28</tomcat.version>
+    <tomcat.version>7.0.67</tomcat.version>
+   
+    
   </properties>
   <dependencies>
     <dependency>
@@ -43,8 +45,18 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>embeddedTomcatSample</finalName>
+    <finalName>SAMDANCLOUD</finalName>
     <plugins>
+    <plugin>
+          <groupId>org.apache.tomcat.maven</groupId>
+          <artifactId>tomcat6-maven-plugin</artifactId>
+          <version>2.2</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.tomcat.maven</groupId>
+          <artifactId>tomcat7-maven-plugin</artifactId>
+          <version>2.2</version>
+        </plugin>
         <plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>appassembler-maven-plugin</artifactId>
@@ -66,6 +78,11 @@
                     </goals>
                 </execution>
             </executions>
+        </plugin>
+        <plugin>
+        	<groupId>org.apache.tomcat.maven</groupId>
+        	<artifactId>tomcat7-maven-plugin</artifactId>
+        	<version>2.2</version>
         </plugin>
     </plugins>
   </build>
